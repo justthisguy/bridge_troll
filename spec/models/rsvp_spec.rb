@@ -120,7 +120,7 @@ describe Rsvp do
     end
 
     it "includes the user's full name" do
-      @rsvp.as_json[:full_name].should == 'Bill Blank'
+      @rsvp.as_json["full_name"].should == 'Bill Blank'
     end
   end
 end
