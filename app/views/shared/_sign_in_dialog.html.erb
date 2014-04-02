@@ -1,11 +1,41 @@
 <div id="sign_in_dialog" class="modal hide <% unless Rails.env.test? %>fade<% end %>" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h1>Sign in</h1>
+  <div class="sign-in" style="display:none;">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h1>Sign in</h1>
+    </div>
+    <div class="modal-body">
+      <%= render partial: "shared/sign_in" %>
+      <%= render partial: "devise/shared/links" %>
+    </div>
+    <div class="modal-footer"></div>
   </div>
-  <div class="modal-body">
-    <%= render partial: "shared/sign_in" %>
-    <%= render partial: "devise/shared/links" %>
+
+  <div class="mission">
+    <div id="mission_dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>RailsBridge Mission</h1>
+          </div>
+          <div class="modal-body">
+              <ul>A mission statement is a statement of the purpose of a company, organization or person, its reason for existing.</ul>
+              <ul>The mission statement should guide the actions of the organization, spell out its overall goal, provide a path, and guide decision-making. It provides "the framework or context within which the company's strategies are formulated." It's like a goal for what the company wants to do for the world.</ul>
+              <ul>The quick brown fox jumped over the lazy dog.</ul>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" >I agree</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="modal-footer"></div>
+
 </div>
+
+<script type="text/javascript">
+  $(".mission").click(function(){
+    $(".mission").hide();
+    $(".sign-in").show();
+  });
+</script>
